@@ -1,0 +1,62 @@
+name: unit-test
+
+on:
+  push:
+    paths-ignore:
+      - "website/**"
+    branches:
+      - "master"
+  pull_request:
+    paths-ignore:
+      - "website/**"
+    branches:
+      - "master"
+
+jobs:
+  test:
+    name: Test on ubuntu
+    env:
+      TABLESTORE_ACCESSKEYID_ENV: ${{ secrets.TABLESTORE_ACCESSKEYID_ENV }}
+      TABLESTORE_ACCESSKEYSECRET_ENV: ${{ secrets.TABLESTORE_ACCESSKEYSECRET_ENV }}
+      TABLESTORE_ENDPOINT_ENV: ${{ secrets.TABLESTORE_ENDPOINT_ENV }}
+      TABLESTORE_INSTANCE_ENV: ${{ secrets.TABLESTORE_INSTANCE_ENV }}
+    strategy:
+      fail-fast: true
+      matrix:
+        go: ["stable"]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print env
+        run: env
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: docker compose
+        run: docker compose -f test/docker-compose.yaml up -d
+
+      - name: Set up Go ${{ matrix.go }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+          cache: true
+
+      - name: Get dependencies
+        run: |
+          go env
+          go mod tidy && git diff --exit-code go.mod go.sum
+
+      - name: Test
+        run: |
+          make unit-test
+
+      - name: Codecov
+        uses: codecov/codecov-action@v5
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          fail_ci_if_error: true
+          files: ./coverage.txt
+          name: jupiter
+          verbose: true
