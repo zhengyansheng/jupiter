@@ -14,7 +14,7 @@
 
 package rediselector
 
-import "github.com/douyu/jupiter/pkg/core/elect"
+import "github.com/zhengyansheng/jupiter/pkg/core/elect"
 
 var _ elect.LeaderElector = &redisLeaderElector{}
 

@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ import (
 
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg/core/imeta"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/core/imeta"
 )
 
 var (

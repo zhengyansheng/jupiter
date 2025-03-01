@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,9 +20,9 @@ import (
 	"os"
 	"sort"
 
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/core/cmd"
 	"github.com/urfave/cli"
+	"github.com/zhengyansheng/jupiter/pkg"
+	"github.com/zhengyansheng/jupiter/pkg/core/cmd"
 )
 
 var Commands = []cli.Command{
@@ -40,7 +40,7 @@ var Commands = []cli.Command{
 			cli.StringFlag{
 				Name:  "remote",
 				Usage: "choose remote template",
-				Value: "github.com/douyu/jupiter-layout",
+				Value: "github.com/zhengyansheng/jupiter-layout",
 			},
 			cli.StringFlag{
 				Name:  "branch",
@@ -84,7 +84,7 @@ var Commands = []cli.Command{
 			cli.StringFlag{
 				Name:  "remote",
 				Usage: "choose remote repo",
-				Value: "github.com/douyu/jupiter/cmd/jupiter",
+				Value: "github.com/zhengyansheng/jupiter/cmd/jupiter",
 			},
 		},
 	},
@@ -96,7 +96,7 @@ var Commands = []cli.Command{
 			cli.StringFlag{
 				Name:  "remote",
 				Usage: "choose remote template",
-				Value: "github.com/douyu/jupiter-layout",
+				Value: "github.com/zhengyansheng/jupiter-layout",
 			},
 		},
 	},

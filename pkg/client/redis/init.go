@@ -8,8 +8,8 @@ import (
 	"github.com/go-redis/redis/v8"
 	jsoniter "github.com/json-iterator/go"
 
-	prome "github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/server/governor"
+	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/server/governor"
 )
 
 var instances = sync.Map{}

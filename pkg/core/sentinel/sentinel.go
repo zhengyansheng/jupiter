@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ import (
 	"github.com/alibaba/sentinel-golang/api"
 	sentinel "github.com/alibaba/sentinel-golang/api"
 	"github.com/alibaba/sentinel-golang/core/base"
-	"github.com/douyu/jupiter/pkg/core/hooks"
-	"github.com/douyu/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/core/hooks"
+	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 )
 
 var (

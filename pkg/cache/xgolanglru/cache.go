@@ -2,10 +2,10 @@ package xgolanglru
 
 import (
 	"fmt"
-	prome "github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/hashicorp/golang-lru/v2/expirable"
 	"github.com/samber/lo"
+	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 	"reflect"
 )

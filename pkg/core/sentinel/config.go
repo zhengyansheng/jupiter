@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,11 +25,11 @@ import (
 	"github.com/alibaba/sentinel-golang/core/flow"
 	"github.com/alibaba/sentinel-golang/core/system"
 	"github.com/alibaba/sentinel-golang/ext/datasource"
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/client/etcdv3"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg"
+	"github.com/zhengyansheng/jupiter/pkg/client/etcdv3"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.uber.org/zap"
 )

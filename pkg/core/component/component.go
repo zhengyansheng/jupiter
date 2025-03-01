@@ -14,7 +14,7 @@
 
 package component
 
-import "github.com/douyu/jupiter/pkg/core/metric"
+import "github.com/zhengyansheng/jupiter/pkg/core/metric"
 
 type Component interface {
 	// Start blocks until the channel is closed or an error occurs.

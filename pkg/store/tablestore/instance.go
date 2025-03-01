@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,11 +22,11 @@ import (
 	"time"
 
 	"github.com/aliyun/aliyun-tablestore-go-sdk/tablestore"
-	prome "github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/util/xstring"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/fatih/color"
+	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
+	"github.com/zhengyansheng/jupiter/pkg/util/xstring"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 func newTs(config *Config) *tablestore.TableStoreClient {

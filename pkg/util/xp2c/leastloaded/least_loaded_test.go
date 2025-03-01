@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ package leastloaded_test
 import (
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/util/xp2c/leastloaded"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/util/xp2c/leastloaded"
 	"google.golang.org/grpc/balancer"
 )
 

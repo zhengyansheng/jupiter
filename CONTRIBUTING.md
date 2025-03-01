@@ -42,10 +42,10 @@ The final commit message should be clear and concise.
 
 ### Open an issue / PR
 
-We use [GitHub Issues](https://github.com/douyu/jupiter/issues) and [Pull Requests](https://github.com/douyu/jupiter/pulls) for trackers.
+We use [GitHub Issues](https://github.com/zhengyansheng/jupiter/issues) and [Pull Requests](https://github.com/zhengyansheng/jupiter/pulls) for trackers.
 
 If you find a typo in a document, find a bug in code, or want new features, or want to give suggestions,
-you can [open an issue on GitHub](https://github.com/douyu/jupiter/issues/new) to report it.
+you can [open an issue on GitHub](https://github.com/zhengyansheng/jupiter/issues/new) to report it.
 Please follow the guideline message in the issue template.
 
 If you want to contribute, please follow the [contribution workflow](#github-workflow) and create a new pull request.

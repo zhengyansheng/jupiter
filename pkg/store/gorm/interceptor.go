@@ -19,9 +19,9 @@ import (
 	"time"
 
 	"github.com/alibaba/sentinel-golang/core/base"
-	prome "github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/core/sentinel"
-	"github.com/douyu/jupiter/pkg/xlog"
+	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"gorm.io/gorm"
 )
 

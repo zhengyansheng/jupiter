@@ -15,27 +15,25 @@
 package resty
 
 import (
+	"context"
 	"errors"
 	"net/http"
 	"time"
 
 	"github.com/alibaba/sentinel-golang/api"
 	"github.com/alibaba/sentinel-golang/core/base"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/core/ecode"
-	"github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/core/sentinel"
-	"github.com/douyu/jupiter/pkg/core/singleton"
-	"github.com/douyu/jupiter/pkg/core/xtrace"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/go-resty/resty/v2"
 	"github.com/samber/lo"
 	"github.com/spf13/cast"
-	"go.opentelemetry.io/otel/attribute"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
+	"github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
+	"github.com/zhengyansheng/jupiter/pkg/core/singleton"
+	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.opentelemetry.io/otel/codes"
-	"go.opentelemetry.io/otel/propagation"
 	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
 	"go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"
@@ -164,17 +162,10 @@ func (config *Config) Build() (*resty.Client, error) {
 		}
 	})
 
-	tracer := xtrace.NewTracer(trace.SpanKindClient)
-	attrs := []attribute.KeyValue{
-		semconv.RPCSystemKey.String("http"),
-	}
-
 	client.OnBeforeRequest(func(c *resty.Client, r *resty.Request) error {
 		if config.EnableTrace {
 
-			ctx, _ := tracer.Start(r.Context(), r.URL, propagation.HeaderCarrier(r.Header), trace.WithAttributes(attrs...))
-
-			r.SetContext(ctx)
+			r.SetContext(context.TODO())
 		}
 
 		if config.EnableSentinel {

@@ -9,10 +9,10 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/aliyun/aliyun-tablestore-go-sdk/tablestore"
 	"github.com/aliyun/aliyun-tablestore-go-sdk/tablestore/search"
-	cfg "github.com/douyu/jupiter/pkg/conf"
 	"github.com/golang/protobuf/proto"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
+	cfg "github.com/zhengyansheng/jupiter/pkg/conf"
 )
 
 const (

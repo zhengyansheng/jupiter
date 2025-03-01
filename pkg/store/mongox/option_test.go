@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 )
 
 func TestMain(m *testing.M) {

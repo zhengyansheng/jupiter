@@ -9,10 +9,10 @@ import (
 	"github.com/samber/lo"
 	"go.uber.org/zap"
 
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/core/singleton"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/core/singleton"
+	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 type Client struct {

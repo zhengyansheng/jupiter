@@ -1,7 +1,7 @@
 package xfreecache
 
 import (
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
 	"golang.org/x/sync/errgroup"
 	"strconv"
 	"testing"

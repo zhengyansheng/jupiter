@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,9 +17,9 @@ package gorm
 import (
 	"errors"
 
-	prome "github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/util/xretry"
-	"github.com/douyu/jupiter/pkg/xlog"
+	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/util/xretry"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"gorm.io/gorm"
 )
 

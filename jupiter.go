@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
 package jupiter
 
 import (
-	"github.com/douyu/jupiter/pkg/core/application"
-	"github.com/douyu/jupiter/pkg/core/hooks"
+	"github.com/zhengyansheng/jupiter/pkg/core/application"
+	"github.com/zhengyansheng/jupiter/pkg/core/hooks"
 )
 
 var (

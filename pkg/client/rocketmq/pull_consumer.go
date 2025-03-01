@@ -8,14 +8,11 @@ import (
 	"github.com/apache/rocketmq-client-go/v2/consumer"
 	"github.com/apache/rocketmq-client-go/v2/primitive"
 	"github.com/apache/rocketmq-client-go/v2/rlog"
-	"github.com/douyu/jupiter/pkg/core/hooks"
-	"github.com/douyu/jupiter/pkg/core/xtrace"
-	"github.com/douyu/jupiter/pkg/util/xgo"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/samber/lo"
-	"go.opentelemetry.io/otel/attribute"
+	"github.com/zhengyansheng/jupiter/pkg/core/hooks"
+	"github.com/zhengyansheng/jupiter/pkg/util/xgo"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.opentelemetry.io/otel/propagation"
-	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
 	"go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"
 )
@@ -150,7 +147,6 @@ func (cc *PullConsumer) Poll(ctx context.Context, f func(context.Context, []*pri
 
 	fn := func() {
 		xgo.Go(func() {
-			tracer := xtrace.NewTracer(trace.SpanKindConsumer)
 			for {
 				select {
 				case <-cc.done:
@@ -176,14 +172,9 @@ func (cc *PullConsumer) Poll(ctx context.Context, f func(context.Context, []*pri
 								span trace.Span
 							)
 							carrier := propagation.MapCarrier{}
-							attrs := []attribute.KeyValue{
-								semconv.MessagingSystemKey.String("rocketmq"),
-								semconv.MessagingDestinationKindKey.String(msg.Topic),
-							}
 							for key, value := range msg.GetProperties() {
 								carrier[key] = value
 							}
-							ctx, span = tracer.Start(ctx, msg.Topic, carrier, trace.WithAttributes(attrs...))
 							defer span.End()
 						}
 					}

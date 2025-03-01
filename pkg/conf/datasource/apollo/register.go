@@ -3,10 +3,10 @@ package apollo
 import (
 	"net/url"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/flag"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/philchia/agollo/v4"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/flag"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 // DataSourceApollo defines apollo scheme

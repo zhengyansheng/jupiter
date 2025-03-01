@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
 package metric
 
 import (
-	"github.com/douyu/jupiter/pkg/core/constant"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 )
 
 // GaugeVecOpts ...

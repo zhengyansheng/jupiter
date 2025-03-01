@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@ package rocketmq
 
 import (
 	"github.com/apache/rocketmq-client-go/v2/rlog"
-	"github.com/douyu/jupiter/pkg/core/ecode"
-	"github.com/douyu/jupiter/pkg/core/hooks"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
+	"github.com/zhengyansheng/jupiter/pkg/core/hooks"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 )
 

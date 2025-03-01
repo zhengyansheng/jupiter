@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ package xlog
 import (
 	"io"
 
-	"github.com/douyu/jupiter/pkg/xlog/rotate"
+	"github.com/zhengyansheng/jupiter/pkg/xlog/rotate"
 )
 
 func newRotate(config *Config) io.Writer {

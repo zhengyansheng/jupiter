@@ -2,19 +2,19 @@
 
 ![logo](doc/logo.png)
 
-[![GoTest](https://github.com/douyu/jupiter/workflows/unit-test/badge.svg)](https://github.com/douyu/jupiter/actions)
-[![codecov](https://codecov.io/gh/douyu/jupiter/branch/master/graph/badge.svg)](https://codecov.io/gh/douyu/jupiter)
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white&style=flat-square)](https://pkg.go.dev/github.com/douyu/jupiter?tab=doc)
-[![Go Report Card](https://goreportcard.com/badge/github.com/douyu/jupiter)](https://goreportcard.com/report/github.com/douyu/jupiter)
+[![GoTest](https://github.com/zhengyansheng/jupiter/workflows/unit-test/badge.svg)](https://github.com/zhengyansheng/jupiter/actions)
+[![codecov](https://codecov.io/gh/zhengyansheng/jupiter/branch/master/graph/badge.svg)](https://codecov.io/gh/zhengyansheng/jupiter)
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white&style=flat-square)](https://pkg.go.dev/github.com/zhengyansheng/jupiter?tab=doc)
+[![Go Report Card](https://goreportcard.com/badge/github.com/zhengyansheng/jupiter)](https://goreportcard.com/report/github.com/douyu/jupiter)
 ![license](https://img.shields.io/badge/license-Apache--2.0-green.svg)
 
 ## Introduction
 
-JUPITER is a governance-oriented microservice framework, which is being used for years at [Douyu](https://www.douyu.com).
+JUPITER is a governance-oriented microservice framework, which is being used for years at [Douyu](https://www.zhengyansheng.com).
 
 ## Online Demo
 
-[Jupiter Console (Juno)](https://jupiterconsole.douyu.com)
+[Jupiter Console (Juno)](https://jupiterconsole.zhengyansheng.com)
 
 ```
 Username: admin
@@ -23,7 +23,7 @@ Password: admin
 
 ## Documentation
 
-See the [中文文档](http://jupiter.douyu.com/) for the Chinese documentation.
+See the [中文文档](http://jupiter.zhengyansheng.com/) for the Chinese documentation.
 
 ## Requirements
 
@@ -32,14 +32,14 @@ See the [中文文档](http://jupiter.douyu.com/) for the Chinese documentation.
 
 ## Quick Start
 
-1. Install [jupiter](https://github.com/douyu/jupiter/tree/master/cmd/jupiter) toolkit
-1. Create example project from [jupiter-layout](https://github.com/douyu/jupiter-layout)
+1. Install [jupiter](https://github.com/zhengyansheng/jupiter/tree/master/cmd/jupiter) toolkit
+1. Create example project from [jupiter-layout](https://github.com/zhengyansheng/jupiter-layout)
 1. Download go mod dependencies
 1. Run the example project with [jupiter](https://github.com/douyu/jupiter/tree/master/cmd/jupiter) toolkit
 1. Just code yourself :-)
 
 ```bash
-go install github.com/douyu/jupiter/cmd/jupiter@latest
+go install github.com/zhengyansheng/jupiter/cmd/jupiter@latest
 jupiter new example-go
 cd example-go
 go mod tidy
@@ -49,8 +49,8 @@ jupiter run -c cmd/exampleserver/.jupiter.toml
 
 ## Learn More:
 - [Juno](https://github.com/douyu/juno): **Microservice Governance System** for jupiter
-- [Jupiter Layout](https://github.com/douyu/jupiter-layout): **Project Template** for jupiter
-- [Examples](https://github.com/douyu/jupiter-examples)
+- [Jupiter Layout](https://github.com/zhengyansheng/jupiter-layout): **Project Template** for jupiter
+- [Examples](https://github.com/zhengyansheng/jupiter-examples)
 
 ## Bugs and Feedback
 
@@ -62,10 +62,10 @@ Contributions are always welcomed! Please see [CONTRIBUTING](CONTRIBUTING.md) fo
 
 You can start with the issues labeled with good first issue.
 
-<a href="https://github.com/douyu/jupiter/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=douyu/jupiter" />
+<a href="https://github.com/zhengyansheng/jupiter/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=zhengyansheng/jupiter" />
 </a>
 
 ## Contact
 
-- [Wechat Group](https://jupiter.douyu.com/join/#%E5%BE%AE%E4%BF%A1)
+- [Wechat Group](https://jupiter.zhengyansheng.com/join/#%E5%BE%AE%E4%BF%A1)

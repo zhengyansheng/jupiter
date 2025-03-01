@@ -5,8 +5,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/core/xtrace"
-	"github.com/douyu/jupiter/pkg/core/xtrace/jaeger"
 	"github.com/go-redis/redis/v8"
 	"github.com/stretchr/testify/assert"
 )
@@ -73,11 +71,6 @@ func Test_Interceptor(t *testing.T) {
 
 	})
 	t.Run("trace", func(t *testing.T) {
-		xtrace.SetGlobalTracer((&jaeger.Config{
-			Name:     "trace",
-			Endpoint: "localhost:6831",
-			Sampler:  1,
-		}).Build())
 
 		config.EnableTraceInterceptor = true
 		client, _ := config.Build()

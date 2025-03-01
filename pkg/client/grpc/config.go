@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,13 +17,13 @@ package grpc
 import (
 	"time"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/core/ecode"
-	"github.com/douyu/jupiter/pkg/core/singleton"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/samber/lo"
 	"github.com/spf13/cast"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
+	"github.com/zhengyansheng/jupiter/pkg/core/singleton"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/balancer/roundrobin"

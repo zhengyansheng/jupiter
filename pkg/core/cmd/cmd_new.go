@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ import (
 
 const (
 	// 存放于git上的模板module
-	gitOriginModuleName = "douyu/jupiter-layout"
+	gitOriginModuleName = "zhengyansheng/jupiter-layout"
 
 	oneDayUnix = 24 * 60 * 60
 )

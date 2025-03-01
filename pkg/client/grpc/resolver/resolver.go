@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,10 +18,10 @@ import (
 	"context"
 	"strings"
 
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/registry/etcdv3"
-	"github.com/douyu/jupiter/pkg/util/xgo"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/registry/etcdv3"
+	"github.com/zhengyansheng/jupiter/pkg/util/xgo"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"google.golang.org/grpc/attributes"
 	"google.golang.org/grpc/resolver"
 )

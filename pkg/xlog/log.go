@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/core/hooks"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
 	"github.com/fatih/color"
+	"github.com/zhengyansheng/jupiter/pkg/core/hooks"
+	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

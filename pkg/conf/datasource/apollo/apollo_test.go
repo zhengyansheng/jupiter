@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,9 +20,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/conf/datasource/apollo/mockserver"
 	"github.com/philchia/agollo/v4"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/conf/datasource/apollo/mockserver"
 )
 
 func TestMain(m *testing.M) {

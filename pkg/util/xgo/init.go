@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/douyu/jupiter/pkg/util/xstring"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/pkg/errors"
+	"github.com/zhengyansheng/jupiter/pkg/util/xstring"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 )
 

@@ -7,11 +7,11 @@ import (
 	"github.com/spf13/cast"
 	"go.uber.org/zap"
 
-	cfg "github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/core/ecode"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
+	cfg "github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
+	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 // Config ...

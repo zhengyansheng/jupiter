@@ -1,10 +1,10 @@
 package redis
 
 import (
-	cfg "github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
+	cfg "github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 // ClusterOptions 集群配置信息

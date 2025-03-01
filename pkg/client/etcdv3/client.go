@@ -23,9 +23,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/core/ecode"
-	"github.com/douyu/jupiter/pkg/xlog"
 	grpcprom "github.com/grpc-ecosystem/go-grpc-prometheus"
+	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	mvccpb "go.etcd.io/etcd/api/v3/mvccpb"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/client/v3/concurrency"

@@ -1,5 +1,5 @@
 PROJECT_NAME := "jupiter"
-PKG := "github.com/douyu/jupiter"
+PKG := "github.com/zhengyansheng/jupiter"
 PKG_LIST := $(shell go list ${PKG}/... | grep /pkg/)
 GO_FILES := $(shell find . -name '*.go' | grep /pkg/ | grep -v _test.go)
 
@@ -31,7 +31,7 @@ lintmd:
 e2e-test:
 	cd test/e2e \
 		&& go mod tidy \
-		&& ginkgo -r -race -cover -covermode=atomic -coverprofile=coverage.txt --randomize-suites --trace -coverpkg=github.com/douyu/jupiter/... .\
+		&& ginkgo -r -race -cover -covermode=atomic -coverprofile=coverage.txt --randomize-suites --trace -coverpkg=github.com/zhengyansheng/jupiter/... .\
 		&& cd -
 
 # Get the coverage of e2e test
@@ -63,7 +63,7 @@ lint:
 
 # breaking
 breaking:
-	buf breaking --against https://github.com/douyu/jupiter/.git#branch=main,ref=HEAD~1,subdir=proto
+	buf breaking --against https://github.com/zhengyansheng/jupiter/.git#branch=main,ref=HEAD~1,subdir=proto
 
 # test
 test-proto2http:

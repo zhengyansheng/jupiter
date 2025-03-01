@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,11 +25,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/util/xcast"
-	"github.com/douyu/jupiter/pkg/util/xmap"
 	"github.com/mitchellh/mapstructure"
 	"github.com/pkg/errors"
 	"github.com/spf13/cast"
+	"github.com/zhengyansheng/jupiter/pkg/util/xcast"
+	"github.com/zhengyansheng/jupiter/pkg/util/xmap"
 )
 
 // Configuration provides configuration for application.

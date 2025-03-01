@@ -17,8 +17,8 @@ package application
 import (
 	"os"
 
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/flag"
+	"github.com/zhengyansheng/jupiter/pkg"
+	"github.com/zhengyansheng/jupiter/pkg/flag"
 )
 
 func init() {

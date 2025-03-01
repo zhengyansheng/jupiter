@@ -22,12 +22,10 @@ import (
 	"github.com/apache/rocketmq-client-go/v2"
 	"github.com/apache/rocketmq-client-go/v2/consumer"
 	"github.com/apache/rocketmq-client-go/v2/primitive"
-	"github.com/douyu/jupiter/pkg/core/hooks"
-	"github.com/douyu/jupiter/pkg/core/xtrace"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/juju/ratelimit"
 	"github.com/samber/lo"
-	"go.opentelemetry.io/otel/attribute"
+	"github.com/zhengyansheng/jupiter/pkg/core/hooks"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.opentelemetry.io/otel/propagation"
 	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
 	"go.opentelemetry.io/otel/trace"
@@ -96,14 +94,6 @@ func (cc *PushConsumer) RegisterSingleMessage(f func(context.Context, *primitive
 		xlog.Jupiter().Panic("duplicated register single message", zap.String("topic", cc.Topic))
 	}
 
-	tracer := xtrace.NewTracer(trace.SpanKindConsumer)
-	attrs := []attribute.KeyValue{
-		semconv.MessagingSystemKey.String("rocketmq"),
-		semconv.MessagingRocketmqClientGroupKey.String(cc.Group),
-		semconv.MessagingRocketmqClientIDKey.String(cc.InstanceName),
-		semconv.MessagingRocketmqConsumptionModelKey.String(cc.MessageModel),
-	}
-
 	fn := func(ctx context.Context, msgs ...*primitive.MessageExt) (result consumer.ConsumeResult, err error) {
 		// the recover to prevent panic from causing the coroutine to exit when processing msg.
 		defer func() {
@@ -123,8 +113,6 @@ func (cc *PushConsumer) RegisterSingleMessage(f func(context.Context, *primitive
 				for key, value := range msg.GetProperties() {
 					carrier[key] = value
 				}
-
-				ctx, span = tracer.Start(ctx, msg.Topic, carrier, trace.WithAttributes(attrs...))
 
 				span.SetAttributes(
 					semconv.MessagingRocketmqNamespaceKey.String(msg.Topic),
@@ -164,8 +152,6 @@ func (cc *PushConsumer) RegisterBatchMessage(f func(context.Context, ...*primiti
 		xlog.Jupiter().Panic("duplicated register batch message", zap.String("topic", cc.Topic))
 	}
 
-	tracer := xtrace.NewTracer(trace.SpanKindConsumer)
-
 	fn := func(ctx context.Context, msgs ...*primitive.MessageExt) (result consumer.ConsumeResult, err error) {
 		// the recover to prevent panic from causing the coroutine to exit when processing msg.
 		defer func() {
@@ -181,14 +167,9 @@ func (cc *PushConsumer) RegisterBatchMessage(f func(context.Context, ...*primiti
 				)
 
 				carrier := propagation.MapCarrier{}
-				attrs := []attribute.KeyValue{
-					semconv.MessagingSystemKey.String("rocketmq"),
-					semconv.MessagingDestinationKindKey.String(msg.Topic),
-				}
 				for key, value := range msg.GetProperties() {
 					carrier[key] = value
 				}
-				ctx, span = tracer.Start(ctx, msg.Topic, carrier, trace.WithAttributes(attrs...))
 				defer span.End()
 			}
 		}

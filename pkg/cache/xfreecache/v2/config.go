@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/coocood/freecache"
-	"github.com/douyu/jupiter/pkg/cache"
-	cfg "github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg/cache"
+	cfg "github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 )
 

@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,9 +17,9 @@ package xdebug
 import (
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg/util/xstring"
 	"github.com/fatih/color"
 	"github.com/tidwall/pretty"
+	"github.com/zhengyansheng/jupiter/pkg/util/xstring"
 )
 
 // DebugObject ...

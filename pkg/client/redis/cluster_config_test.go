@@ -3,9 +3,9 @@ package redis
 import (
 	"bytes"
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/core/constant"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 	"testing"
 	"time"
 )

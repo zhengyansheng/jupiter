@@ -1,7 +1,7 @@
 package xlog
 
 import (
-	"github.com/douyu/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"go.uber.org/zap/zapcore"
 )
 

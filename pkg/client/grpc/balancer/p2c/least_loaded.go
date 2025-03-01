@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
 package p2c
 
 import (
-	"github.com/douyu/jupiter/pkg/util/xp2c"
-	"github.com/douyu/jupiter/pkg/util/xp2c/leastloaded"
+	"github.com/zhengyansheng/jupiter/pkg/util/xp2c"
+	"github.com/zhengyansheng/jupiter/pkg/util/xp2c/leastloaded"
 	"google.golang.org/grpc/balancer"
 	"google.golang.org/grpc/balancer/base"
 	"google.golang.org/grpc/grpclog"

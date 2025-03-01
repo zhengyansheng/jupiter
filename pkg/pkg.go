@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/core/constant"
 	"github.com/fatih/color"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 )
 
 const jupiterVersion = "v0.11.13"

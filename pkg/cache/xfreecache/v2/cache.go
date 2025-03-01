@@ -2,8 +2,8 @@ package xfreecache
 
 import (
 	"fmt"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/samber/lo"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 	"reflect"
 )

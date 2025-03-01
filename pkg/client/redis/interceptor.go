@@ -4,20 +4,19 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	//"github.com/douyu/jupiter/pkg/core/xtrace"
+	"go.opentelemetry.io/otel/codes"
+	"go.opentelemetry.io/otel/trace"
 	"strings"
 	"time"
 
 	"github.com/alibaba/sentinel-golang/core/base"
 	"github.com/fatih/color"
 	"github.com/go-redis/redis/v8"
-	"go.opentelemetry.io/otel/codes"
-	"go.opentelemetry.io/otel/trace"
 
-	prome "github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/core/sentinel"
-	"github.com/douyu/jupiter/pkg/util/xstring"
-	"github.com/douyu/jupiter/pkg/xlog"
+	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
+	"github.com/zhengyansheng/jupiter/pkg/util/xstring"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 type redigoContextKeyType struct{}
@@ -238,39 +237,14 @@ func accessInterceptor(compName string, addr string, config *Config, logger *xlo
 	})
 }
 func traceInterceptor(compName string, addr string, config *Config, logger *xlog.Logger) *interceptor {
-	//tracer := xtrace.NewTracer(trace.SpanKindClient)
-	//attrs := []attribute.KeyValue{
-	//	semconv.NetHostPortKey.String(addr),
-	//	semconv.DBNameKey.Int(config.DB),
-	//	semconv.DBSystemRedis,
-	//}
-
 	return newInterceptor(compName, config, logger).
 		setBeforeProcess(func(ctx context.Context, cmd redis.Cmder) (context.Context, error) {
-			//ctx, span := tracer.Start(ctx, cmd.FullName(), nil, trace.WithAttributes(attrs...))
-			//span.SetAttributes(
-			//	semconv.DBOperationKey.String(cmd.Name()),
-			//	semconv.DBStatementKey.String(cast.ToString(cmd.Args())),
-			//)
 			return ctx, nil
 		}).
 		setAfterProcess(func(ctx context.Context, cmd redis.Cmder) error {
-			span := trace.SpanFromContext(ctx)
-			if err := cmd.Err(); err != nil && err != redis.Nil {
-				span.RecordError(err)
-				span.SetStatus(codes.Error, err.Error())
-			} else {
-				span.SetStatus(codes.Ok, "ok")
-			}
-
-			span.End()
 			return nil
 		}).
 		setBeforeProcessPipeline(func(ctx context.Context, cmds []redis.Cmder) (context.Context, error) {
-			//ctx, span := tracer.Start(ctx, "pipeline", nil, trace.WithAttributes(attrs...))
-			//span.SetAttributes(
-			//	semconv.DBOperationKey.String(getCmdsName(cmds)),
-			//)
 			return ctx, nil
 		}).
 		setAfterProcessPipeline(func(ctx context.Context, cmds []redis.Cmder) error {

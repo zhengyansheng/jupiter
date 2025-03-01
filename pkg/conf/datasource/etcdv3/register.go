@@ -1,11 +1,11 @@
 package etcdv3
 
 import (
-	"github.com/douyu/jupiter/pkg/client/etcdv3"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/flag"
-	"github.com/douyu/jupiter/pkg/util/xnet"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg/client/etcdv3"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/flag"
+	"github.com/zhengyansheng/jupiter/pkg/util/xnet"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 // DataSourceEtcdv3 defines etcdv3 scheme

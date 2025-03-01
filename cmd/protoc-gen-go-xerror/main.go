@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg"
+	"github.com/zhengyansheng/jupiter/pkg"
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/types/pluginpb"
 )

@@ -148,6 +148,8 @@ github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f h1:lO4WD4F/r
 github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f/go.mod h1:cuUVRXasLTGF7a8hSLbxyZXjz+1KgoB3wDUb6vlszIc=
 github.com/dimiro1/banner v1.1.0 h1:TSfy+FsPIIGLzaMPOt52KrEed/omwFO1P15VA8PMUh0=
 github.com/dimiro1/banner v1.1.0/go.mod h1:tbL318TJiUaHxOUNN+jnlvFSgsh/RX7iJaQrGgOiTco=
+github.com/douyu/jupiter v0.11.19 h1:evZP5oJa+MZIhHHK3Ex+WUFp1PLjJXXGWnnxWWE5Tx0=
+github.com/douyu/jupiter v0.11.19/go.mod h1:+NeVD8lGwpnczeG3JY4b4nS4u0SAvOO5tFl14p3BlR4=
 github.com/dustin/go-humanize v0.0.0-20171111073723-bb3d318650d4/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/eapache/go-resiliency v1.1.0/go.mod h1:kFI+JgMyC7bLPUVY133qvEBtVayf5mFgVsvEsIPBvNs=
 github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21/go.mod h1:+020luEh2TKB4/GOp8oxxtq0Daoen/Cii55CzbTV6DU=

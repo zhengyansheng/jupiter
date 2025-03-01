@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ import (
 	"time"
 
 	"github.com/BurntSushi/toml"
-	cfg "github.com/douyu/jupiter/pkg/conf"
 	"github.com/stretchr/testify/assert"
+	cfg "github.com/zhengyansheng/jupiter/pkg/conf"
 )
 
 type User struct {

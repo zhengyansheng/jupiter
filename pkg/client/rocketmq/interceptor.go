@@ -20,20 +20,15 @@ import (
 	"time"
 
 	"github.com/alibaba/sentinel-golang/core/base"
-	"github.com/douyu/jupiter/pkg/core/sentinel"
-	"github.com/douyu/jupiter/pkg/core/xtrace"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/codes"
-	"go.opentelemetry.io/otel/propagation"
-
 	"github.com/apache/rocketmq-client-go/v2/consumer"
 	"github.com/apache/rocketmq-client-go/v2/primitive"
-	"github.com/douyu/jupiter/pkg/core/imeta"
-	"github.com/douyu/jupiter/pkg/core/istats"
-	"github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/xlog"
-	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
+	"github.com/zhengyansheng/jupiter/pkg/core/imeta"
+	"github.com/zhengyansheng/jupiter/pkg/core/istats"
+	"github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
+	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
+	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/trace"
 	"google.golang.org/grpc/metadata"
 )
@@ -173,12 +168,6 @@ func produceResultStr(result primitive.SendStatus) string {
 }
 
 func producerDefaultInterceptor(producer *Producer) primitive.Interceptor {
-	tracer := xtrace.NewTracer(trace.SpanKindProducer)
-	attrs := []attribute.KeyValue{
-		semconv.MessagingSystemKey.String("rocketmq"),
-		semconv.MessagingRocketmqClientGroupKey.String(producer.Group),
-		semconv.MessagingRocketmqClientIDKey.String(producer.InstanceName),
-	}
 
 	return func(ctx context.Context, req, reply interface{}, next primitive.Invoker) error {
 		beg := time.Now()
@@ -190,7 +179,6 @@ func producerDefaultInterceptor(producer *Producer) primitive.Interceptor {
 		if producer.EnableTrace {
 
 			md := metadata.New(nil)
-			ctx, span = tracer.Start(ctx, realReq.Topic, propagation.HeaderCarrier(md), trace.WithAttributes(attrs...))
 
 			defer span.End()
 

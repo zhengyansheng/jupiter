@@ -6,10 +6,10 @@ import (
 	"time"
 
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
 
-	"github.com/douyu/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 )
 
 func TestStdConfig(t *testing.T) {

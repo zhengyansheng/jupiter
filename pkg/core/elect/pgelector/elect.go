@@ -20,8 +20,8 @@ import (
 	"time"
 
 	"cirello.io/pglock"
-	"github.com/douyu/jupiter/pkg/core/elect"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg/core/elect"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 )
 

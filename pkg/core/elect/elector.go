@@ -17,7 +17,7 @@ package elect
 import (
 	"sync"
 
-	"github.com/douyu/jupiter/pkg/core/component"
+	"github.com/zhengyansheng/jupiter/pkg/core/component"
 )
 
 var _ component.Manager = &electorComponent{}

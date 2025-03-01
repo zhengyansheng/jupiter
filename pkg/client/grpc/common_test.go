@@ -7,12 +7,12 @@ import (
 	"time"
 
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/registry/etcdv3"
-	"github.com/douyu/jupiter/pkg/server"
-	"github.com/douyu/jupiter/pkg/xlog"
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
 	"github.com/samber/lo"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/registry/etcdv3"
+	"github.com/zhengyansheng/jupiter/pkg/server"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
 	"google.golang.org/grpc"
 )
 

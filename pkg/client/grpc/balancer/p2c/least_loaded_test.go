@@ -22,8 +22,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/client/grpc/balancer/p2c"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/client/grpc/balancer/p2c"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	testpb "google.golang.org/grpc/interop/grpc_testing"

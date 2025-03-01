@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/registry/etcdv3"
-	"github.com/douyu/jupiter/pkg/server"
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
 	"github.com/samber/lo"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/registry/etcdv3"
+	"github.com/zhengyansheng/jupiter/pkg/server"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/peer"
 )

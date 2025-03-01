@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import (
 	"time"
 )
 
-//TestCycleDone
+// TestCycleDone
 func TestCycleDone(t *testing.T) {
 	state := "init"
 	c := NewCycle()
@@ -44,7 +44,7 @@ func TestCycleDone(t *testing.T) {
 	}
 }
 
-//TestCycleClose
+// TestCycleClose
 func TestCycleClose(t *testing.T) {
 	state := "init"
 	c := NewCycle()

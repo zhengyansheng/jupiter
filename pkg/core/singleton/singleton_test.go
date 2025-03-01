@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 )
 
 func TestStore(t *testing.T) {

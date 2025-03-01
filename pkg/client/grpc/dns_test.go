@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
 	"github.com/samber/lo"
 	"github.com/stretchr/testify/assert"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
 )
 
 func TestDNS(t *testing.T) {

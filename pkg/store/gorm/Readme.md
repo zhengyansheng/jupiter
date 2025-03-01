@@ -23,7 +23,7 @@
 package main
 
 import (
-  "github.com/douyu/jupiter/pkg/store/gorm"
+  "github.com/zhengyansheng/jupiter/pkg/store/gorm"
 )
 
 type Product struct {

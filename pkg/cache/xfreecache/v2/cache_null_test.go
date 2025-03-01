@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
 	"testing"
 )
 

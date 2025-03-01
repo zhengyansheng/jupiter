@@ -84,7 +84,7 @@ Web开发和运维技术在不断的发展，短短几年已涌现出了非常�
 
 ## 结语
 
-以上是Jupiter对微服务架构实践的一些核心关注点和功能的介绍。详细的介绍，欢迎大家访问 [GitHub - douyu/jupiter: Jupiter是douyu开源的面向服务治理的Golang微服务框架](https://github.com/douyu/jupiter)来了解。
+以上是Jupiter对微服务架构实践的一些核心关注点和功能的介绍。详细的介绍，欢迎大家访问 [GitHub - zhengyansheng/jupiter: Jupiter是douyu开源的面向服务治理的Golang微服务框架](https://github.com/zhengyansheng/jupiter)来了解。
 
 Jupiter Go正在快速迭代，v0.5.0包含了基本的架构骨架，更多的功能也在逐步整理，并将尽快释放出来。我们非常欢迎感兴趣的开发者参与贡献，一起来丰富Jupiter的功能、推动未来版本的演进。
 

@@ -3,8 +3,8 @@ package singleton
 import (
 	"sync"
 
-	"github.com/douyu/jupiter/pkg/core/constant"
 	"github.com/spf13/cast"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 )
 
 var singleton sync.Map

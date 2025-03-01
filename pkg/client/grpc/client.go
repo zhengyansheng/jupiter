@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/client/grpc/resolver"
-	"github.com/douyu/jupiter/pkg/core/ecode"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg/client/grpc/resolver"
+	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )

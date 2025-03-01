@@ -1,4 +1,4 @@
-// Copyright 2022 Douyu
+// Copyright 2022 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,14 +23,14 @@ import (
 	"time"
 
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/core/hooks"
-	"github.com/douyu/jupiter/pkg/executor"
-	"github.com/douyu/jupiter/pkg/executor/xxl"
-	"github.com/douyu/jupiter/pkg/server"
-	"github.com/douyu/jupiter/pkg/server/xgrpc"
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/core/hooks"
+	"github.com/zhengyansheng/jupiter/pkg/executor"
+	"github.com/zhengyansheng/jupiter/pkg/executor/xxl"
+	"github.com/zhengyansheng/jupiter/pkg/server"
+	"github.com/zhengyansheng/jupiter/pkg/server/xgrpc"
 )
 
 type testServer struct {

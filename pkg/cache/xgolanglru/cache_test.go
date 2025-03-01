@@ -3,13 +3,13 @@ package xgolanglru
 import (
 	"bytes"
 	"fmt"
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
 	"testing"
 	"time"
 
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
 )
 
 type Student struct {

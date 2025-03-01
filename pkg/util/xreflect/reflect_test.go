@@ -3,7 +3,7 @@ package xreflect_test
 import (
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/util/xreflect"
+	"github.com/zhengyansheng/jupiter/pkg/util/xreflect"
 )
 
 func TestIn(t *testing.T) {

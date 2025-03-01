@@ -21,17 +21,10 @@ import (
 	"time"
 
 	"github.com/alibaba/sentinel-golang/core/base"
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/core/sentinel"
-	"github.com/douyu/jupiter/pkg/core/xtrace"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/labstack/echo/v4"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/codes"
-	"go.opentelemetry.io/otel/propagation"
-	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 )
 
@@ -101,26 +94,6 @@ func metricServerInterceptor() echo.MiddlewareFunc {
 func traceServerInterceptor() echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) (err error) {
-			tracer := xtrace.NewTracer(trace.SpanKindServer)
-			attrs := []attribute.KeyValue{
-				semconv.RPCSystemKey.String("http"),
-			}
-
-			ctx, span := tracer.Start(c.Request().Context(), c.Request().URL.Path, propagation.HeaderCarrier(c.Request().Header), trace.WithAttributes(attrs...))
-			span.SetAttributes(semconv.HTTPServerAttributesFromHTTPRequest(pkg.Name(), c.Request().URL.Path, c.Request())...)
-
-			ctx = xlog.NewContext(ctx, xlog.Default(), span.SpanContext().TraceID().String())
-			ctx = xlog.NewContext(ctx, xlog.Jupiter(), span.SpanContext().TraceID().String())
-
-			c.SetRequest(c.Request().WithContext(ctx))
-			defer func() {
-				if err != nil {
-					span.SetStatus(codes.Error, err.Error())
-					span.RecordError(err)
-				}
-
-				span.End()
-			}()
 
 			return next(c)
 		}

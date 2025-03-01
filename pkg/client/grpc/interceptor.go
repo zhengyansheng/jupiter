@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020 zhengyansheng
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,18 +23,13 @@ import (
 
 	"github.com/alibaba/sentinel-golang/api"
 	"github.com/alibaba/sentinel-golang/core/base"
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/core/ecode"
-	"github.com/douyu/jupiter/pkg/core/metric"
-	"github.com/douyu/jupiter/pkg/core/sentinel"
-	"github.com/douyu/jupiter/pkg/core/xtrace"
-	"github.com/douyu/jupiter/pkg/util/xstring"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/fatih/color"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/codes"
-	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/zhengyansheng/jupiter/pkg"
+	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
+	"github.com/zhengyansheng/jupiter/pkg/core/metric"
+	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
+	"github.com/zhengyansheng/jupiter/pkg/util/xstring"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/peer"
@@ -117,35 +112,7 @@ func debugUnaryClientInterceptor(addr string) grpc.UnaryClientInterceptor {
 }
 
 func TraceUnaryClientInterceptor() grpc.UnaryClientInterceptor {
-	tracer := xtrace.NewTracer(trace.SpanKindClient)
-	attrs := []attribute.KeyValue{
-		semconv.RPCSystemGRPC,
-	}
-
 	return func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) (err error) {
-		md, ok := metadata.FromOutgoingContext(ctx)
-		if !ok {
-			md = metadata.New(nil)
-		} else {
-			md = md.Copy()
-		}
-
-		ctx, span := tracer.Start(ctx, method, xtrace.MetadataReaderWriter(md), trace.WithAttributes(attrs...))
-		ctx = metadata.NewOutgoingContext(ctx, md)
-		span.SetAttributes(
-			semconv.RPCMethodKey.String(method),
-		)
-
-		err = invoker(ctx, method, req, reply, cc, opts...)
-
-		span.SetStatus(codes.Ok, "ok")
-
-		if err != nil {
-			span.RecordError(err)
-			span.SetStatus(codes.Error, err.Error())
-		}
-
-		span.End()
 
 		return err
 	}

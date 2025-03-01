@@ -14,7 +14,7 @@
 
 package application
 
-import "github.com/douyu/jupiter/pkg/conf"
+import "github.com/zhengyansheng/jupiter/pkg/conf"
 
 type Option func(a *Application)
 

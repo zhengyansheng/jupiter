@@ -4,7 +4,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/flag"
+	"github.com/zhengyansheng/jupiter/pkg/flag"
 )
 
 var (
