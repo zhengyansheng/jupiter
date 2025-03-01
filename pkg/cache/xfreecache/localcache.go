@@ -2,7 +2,6 @@ package xfreecache
 
 import (
 	"github.com/coocood/freecache"
-	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 )
@@ -18,14 +17,6 @@ type localStorage struct {
 
 func (l *localStorage) SetCacheData(key string, data []byte) (err error) {
 	err = l.cache.Set([]byte(key), data, int(l.req.Expire.Seconds()))
-	// metric report
-	if !l.req.DisableMetric {
-		if err != nil {
-			prome.CacheHandleCounter.WithLabelValues(prome.TypeLocalCache, l.req.Name, "SetFail", err.Error()).Inc()
-		} else {
-			prome.CacheHandleCounter.WithLabelValues(prome.TypeLocalCache, l.req.Name, "SetSuccess", "").Inc()
-		}
-	}
 	if err != nil {
 		xlog.Jupiter().Error("cache SetCacheData", zap.String("data", string(data)), zap.Error(err))
 		if err == freecache.ErrLargeEntry || err == freecache.ErrLargeKey {
@@ -38,14 +29,7 @@ func (l *localStorage) SetCacheData(key string, data []byte) (err error) {
 
 func (l *localStorage) GetCacheData(key string) (data []byte, err error) {
 	data, err = l.cache.Get([]byte(key))
-	// metric report
-	if !l.req.DisableMetric {
-		if err != nil {
-			prome.CacheHandleCounter.WithLabelValues(prome.TypeLocalCache, l.req.Name, "MissCount", err.Error()).Inc()
-		} else {
-			prome.CacheHandleCounter.WithLabelValues(prome.TypeLocalCache, l.req.Name, "HitCount", "").Inc()
-		}
-	}
+
 	if err == freecache.ErrNotFound || data == nil {
 		err = nil
 		return

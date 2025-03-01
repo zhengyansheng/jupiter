@@ -14,8 +14,6 @@
 
 package component
 
-import "github.com/zhengyansheng/jupiter/pkg/core/metric"
-
 type Component interface {
 	// Start blocks until the channel is closed or an error occurs.
 	// The component will stop running when the channel is closed.
@@ -45,6 +43,6 @@ type Manager interface {
 // Component builder, build component with injecting govern plugin
 type Builder interface {
 	WithComponentManager(Manager) Builder
-	WithMetrics(metric.Metrics) Builder
+	WithMetrics(interface{}) Builder
 	Build() Component
 }

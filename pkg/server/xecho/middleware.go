@@ -22,7 +22,6 @@ import (
 
 	"github.com/alibaba/sentinel-golang/core/base"
 	"github.com/labstack/echo/v4"
-	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
@@ -81,12 +80,7 @@ func recoverMiddleware(slowQueryThresholdInMilli int64) echo.MiddlewareFunc {
 func metricServerInterceptor() echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) (err error) {
-			beg := time.Now()
-			err = next(c)
-			method := c.Request().Method + "_" + c.Path()
-			metric.ServerHandleHistogram.Observe(time.Since(beg).Seconds(), metric.TypeHTTP, method, extractAID(c))
-			metric.ServerHandleCounter.Inc(metric.TypeHTTP, method, extractAID(c), http.StatusText(c.Response().Status))
-			return err
+			return nil
 		}
 	}
 }

@@ -17,7 +17,6 @@ package gorm
 import (
 	"errors"
 
-	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/util/xretry"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"gorm.io/gorm"
@@ -38,22 +37,18 @@ func dial(name string, config *Config) *gorm.DB {
 	err = xretry.Do(config.Retry, config.RetryWaitTime, func() error {
 		db, err = open(config)
 		if err != nil {
-			prome.LibHandleCounter.WithLabelValues(prome.TypeMySQL, name+".dial", dsn.Addr, err.Error()).Inc()
 			return errors.New("dial nil" + err.Error())
 		}
 
 		if db == nil {
-			prome.LibHandleCounter.WithLabelValues(prome.TypeMySQL, name+".dial", dsn.Addr, "nil db").Inc()
 			return errors.New("db nil" + err.Error())
 		}
 		sql, err := db.DB()
 		if err != nil {
-			prome.LibHandleCounter.WithLabelValues(prome.TypeMySQL, name+".ping", dsn.Addr, err.Error()).Inc()
 			return errors.New("db " + err.Error())
 		}
 
 		if err := sql.Ping(); err != nil {
-			prome.LibHandleCounter.WithLabelValues(prome.TypeMySQL, name+".ping", dsn.Addr, err.Error()).Inc()
 			return errors.New("ping " + err.Error())
 		}
 

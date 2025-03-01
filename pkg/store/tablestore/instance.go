@@ -18,12 +18,10 @@ import (
 	"fmt"
 	"net"
 	"net/http"
-	"strings"
 	"time"
 
 	"github.com/aliyun/aliyun-tablestore-go-sdk/tablestore"
 	"github.com/fatih/color"
-	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
 	"github.com/zhengyansheng/jupiter/pkg/util/xstring"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
@@ -60,22 +58,15 @@ type TsRoundTripper struct {
 
 func (h *TsRoundTripper) RoundTrip(req *http.Request) (*http.Response, error) {
 	var (
-		addr    = req.URL.String()
-		hostURL = strings.TrimLeft(req.URL.Path, "/")
-		method  = req.Method
-		beg     = time.Now()
+		addr   = req.URL.String()
+		method = req.Method
+		beg    = time.Now()
 	)
 
 	resp, err := h.Transport.RoundTrip(req)
 	var cost = time.Since(beg)
 
 	// 指标采集
-	if err != nil {
-		prome.ClientHandleCounter.WithLabelValues(prome.TypeTableStore, h.name, method, hostURL, "error").Inc()
-	} else {
-		prome.ClientHandleCounter.WithLabelValues(prome.TypeTableStore, h.name, method, hostURL, resp.Status).Inc()
-	}
-	prome.ClientHandleHistogram.WithLabelValues(prome.TypeTableStore, h.name, method, hostURL).Observe(cost.Seconds())
 
 	statusCode := -1
 	if resp != nil {

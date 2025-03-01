@@ -13,7 +13,6 @@ import (
 	"github.com/fatih/color"
 	"github.com/go-redis/redis/v8"
 
-	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
 	"github.com/zhengyansheng/jupiter/pkg/util/xstring"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
@@ -149,33 +148,7 @@ func debugInterceptor(compName string, addr string, config *Config, logger *xlog
 func metricInterceptor(compName string, addr string, config *Config, logger *xlog.Logger) *interceptor {
 
 	return newInterceptor(compName, config, logger).
-		setAfterProcess(func(ctx context.Context, cmd redis.Cmder) error {
-			cost := time.Since(ctx.Value(ctxBegKey).(time.Time))
-			err := cmd.Err()
-			name := strings.ToUpper(cmd.Name())
-			prome.LibHandleHistogram.WithLabelValues(prome.TypeRedis, name, addr).Observe(cost.Seconds())
-			if err != nil {
-				if errors.Is(err, redis.Nil) {
-					prome.LibHandleCounter.Inc(prome.TypeRedis, name, addr, "Empty")
-				}
-				prome.LibHandleCounter.Inc(prome.TypeRedis, name, addr, "Error")
-			}
-			prome.LibHandleCounter.Inc(prome.TypeRedis, name, addr, "OK")
-			return nil
-		}).setAfterProcessPipeline(func(ctx context.Context, cmds []redis.Cmder) error {
-		cost := time.Since(ctx.Value(ctxBegKey).(time.Time))
-		names := strings.ToUpper(getCmdsName(cmds))
-		prome.LibHandleHistogram.WithLabelValues(prome.TypeRedis, names, addr).Observe(cost.Seconds())
-		for _, cmd := range cmds {
-			name := strings.ToUpper(cmd.Name())
-			if cmd.Err() != nil {
-				if errors.Is(cmd.Err(), redis.Nil) {
-					prome.LibHandleCounter.Inc(prome.TypeRedis, name, addr, "Empty")
-				}
-				prome.LibHandleCounter.Inc(prome.TypeRedis, name, addr, "Error")
-			}
-			prome.LibHandleCounter.Inc(prome.TypeRedis, name, addr, "OK")
-		}
+	
 		return nil
 	})
 }

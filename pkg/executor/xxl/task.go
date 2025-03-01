@@ -9,7 +9,6 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/executor"
 	"github.com/zhengyansheng/jupiter/pkg/executor/xxl/logger"
 )
@@ -99,7 +98,6 @@ func (t *Task) Run(ctx context.Context, cb CallbackFunc) {
 					t.Trace("任务失败")
 				}
 				_ = cb(ctx, r.taskResultType, r.err.Error())
-				metric.JobHandleCounter.Inc("xxl-job", t.Name, "over fail")
 				return
 			}
 			if r.msg != "" {
@@ -107,7 +105,6 @@ func (t *Task) Run(ctx context.Context, cb CallbackFunc) {
 			}
 			t.Trace("执行完成")
 			_ = cb(ctx, TaskResultTypeDone, msg)
-			metric.JobHandleCounter.Inc("xxl-job", t.Name, "over suc")
 		case <-ctx.Done():
 			atomic.StoreInt32(&t.running, 0)
 			if d, ok := ctx.Deadline(); ok && time.Now().After(d) {
@@ -117,9 +114,7 @@ func (t *Task) Run(ctx context.Context, cb CallbackFunc) {
 				t.Trace("任务取消")
 				_ = cb(ctx, TaskResultTypeCancel, "任务取消")
 			}
-			metric.JobHandleCounter.Inc("xxl-job", t.Name, "over cancel")
 		}
-		metric.ServerHandleHistogram.Observe(time.Since(beg).Seconds(), "xxl-job", t.Name, "client")
 	}
 }
 

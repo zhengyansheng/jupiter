@@ -8,7 +8,6 @@ import (
 	"github.com/go-redis/redis/v8"
 	jsoniter "github.com/json-iterator/go"
 
-	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/server/governor"
 )
 
@@ -38,14 +37,6 @@ func monitor() {
 				poolStats = obj.ClientCluster.PoolStats()
 			}
 
-			if poolStats != nil {
-				prome.ClientStatsGauge.Set(float64(poolStats.Hits), prome.TypeRedis, name, "hits")
-				prome.ClientStatsGauge.Set(float64(poolStats.Misses), prome.TypeRedis, name, "misses")
-				prome.ClientStatsGauge.Set(float64(poolStats.Timeouts), prome.TypeRedis, name, "timeouts")
-				prome.ClientStatsGauge.Set(float64(poolStats.TotalConns), prome.TypeRedis, name, "total_conns")
-				prome.ClientStatsGauge.Set(float64(poolStats.IdleConns), prome.TypeRedis, name, "idle_conns")
-				prome.ClientStatsGauge.Set(float64(poolStats.StaleConns), prome.TypeRedis, name, "stale_conns")
-			}
 			return true
 		})
 		time.Sleep(time.Second * 10)

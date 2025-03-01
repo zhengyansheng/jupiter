@@ -28,7 +28,6 @@ import (
 	"github.com/zhengyansheng/jupiter/pkg/conf"
 	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
-	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
 	"github.com/zhengyansheng/jupiter/pkg/core/singleton"
 	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"

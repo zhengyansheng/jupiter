@@ -24,7 +24,6 @@ import (
 
 	"github.com/alibaba/sentinel-golang/core/base"
 	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
-	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
@@ -34,21 +33,15 @@ import (
 )
 
 func prometheusUnaryServerInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
-	startTime := time.Now()
+
 	resp, err := handler(ctx, req)
-	code := ecode.ExtractCodes(err)
-	metric.ServerHandleHistogram.Observe(time.Since(startTime).Seconds(), metric.TypeGRPCUnary, info.FullMethod, extractAID(ctx))
-	metric.ServerHandleCounter.Inc(metric.TypeGRPCUnary, info.FullMethod, extractAID(ctx), code.GetMessage())
+
 	return resp, err
 }
 
 func prometheusStreamServerInterceptor(srv interface{}, ss grpc.ServerStream, info *grpc.StreamServerInfo, handler grpc.StreamHandler) error {
-	startTime := time.Now()
-	err := handler(srv, ss)
-	code := ecode.ExtractCodes(err)
-	metric.ServerHandleHistogram.Observe(time.Since(startTime).Seconds(), metric.TypeGRPCStream, info.FullMethod, extractAID(ss.Context()))
-	metric.ServerHandleCounter.Inc(metric.TypeGRPCStream, info.FullMethod, extractAID(ss.Context()), code.GetMessage())
-	return err
+
+	return nil
 }
 
 func NewTraceUnaryServerInterceptor() grpc.UnaryServerInterceptor {

@@ -19,7 +19,6 @@ import (
 	"time"
 
 	"github.com/gogf/gf/net/ghttp"
-	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 )
@@ -57,12 +56,6 @@ func recoverMiddleware(logger *xlog.Logger, slowQueryThresholdInMilli int64) ght
 
 func metricServerInterceptor() ghttp.HandlerFunc {
 	return func(r *ghttp.Request) {
-		r.Response.CORSDefault()
-		beg := time.Now()
-		r.Middleware.Next()
-
-		metric.ServerHandleHistogram.Observe(time.Since(beg).Seconds(), metric.TypeHTTP, r.Method+"."+r.URL.Path, r.Header.Get("AID"))
-		metric.ServerHandleCounter.Inc(metric.TypeHTTP, r.Method+"."+r.URL.Path, r.Header.Get("AID"), http.StatusText(r.Response.Status))
 	}
 }
 func traceServerInterceptor() ghttp.HandlerFunc {

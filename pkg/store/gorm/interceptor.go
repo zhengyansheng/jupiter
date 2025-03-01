@@ -19,7 +19,6 @@ import (
 	"time"
 
 	"github.com/alibaba/sentinel-golang/core/base"
-	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"gorm.io/gorm"
@@ -35,36 +34,7 @@ var errSlowCommand = errors.New("mysql slow command")
 func metricInterceptor() Interceptor {
 	return func(dsn *DSN, op string, options *Config, next Handler) Handler {
 		return func(scope *gorm.DB) {
-			beg := time.Now()
-			next(scope)
-			cost := time.Since(beg)
-
-			// error metric
-			if scope.Error != nil {
-				prome.LibHandleCounter.WithLabelValues(prome.TypeMySQL, dsn.DBName+"."+scope.Name(), dsn.Addr, getStatement(scope.Error.Error())).Inc()
-
-				if scope.Error != gorm.ErrRecordNotFound {
-					xlog.Jupiter().Error("mysql err", xlog.FieldErr(scope.Error), xlog.FieldName(dsn.DBName+"."+scope.Name()), xlog.FieldMethod(op))
-				} else {
-					xlog.Jupiter().Warn("record not found", xlog.FieldErr(scope.Error), xlog.FieldName(dsn.DBName+"."+scope.Name()), xlog.FieldMethod(op))
-				}
-			} else {
-				prome.LibHandleCounter.WithLabelValues(prome.TypeMySQL, dsn.DBName+"."+scope.Name(), dsn.Addr, "OK").Inc()
-			}
-
-			prome.LibHandleHistogram.WithLabelValues(prome.TypeMySQL, dsn.DBName+"."+scope.Name(), dsn.Addr).Observe(cost.Seconds())
-
-			if options.SlowThreshold > time.Duration(0) && options.SlowThreshold < cost {
-				xlog.Jupiter().Error(
-					"slow",
-					xlog.FieldErr(errSlowCommand),
-					xlog.FieldMethod(op),
-					xlog.FieldExtMessage(logSQL(scope.Statement.SQL.String(), scope.Statement.Vars, options.DetailSQL)),
-					xlog.FieldAddr(dsn.Addr),
-					xlog.FieldName(dsn.DBName+"."+scope.Name()),
-					xlog.FieldCost(cost),
-				)
-			}
+			_ = scope
 		}
 	}
 }

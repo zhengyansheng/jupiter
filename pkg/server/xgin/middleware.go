@@ -27,7 +27,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 )

@@ -24,7 +24,6 @@ import (
 	"github.com/apache/rocketmq-client-go/v2/primitive"
 	"github.com/zhengyansheng/jupiter/pkg/core/imeta"
 	"github.com/zhengyansheng/jupiter/pkg/core/istats"
-	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
 	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
@@ -94,10 +93,6 @@ func consumerMetricInterceptor() primitive.Interceptor {
 					xlog.String("result", result),
 				)
 			}
-			metric.ClientHandleCounter.Inc(metric.TypeRocketMQ, topic, "consume", host, result)
-			metric.ClientHandleHistogram.Observe(time.Since(beg).Seconds(), metric.TypeRocketMQ, topic, "consume-delay", host)
-			// StoreTimestamp 消息存储到消息队列RocketMQ版服务端的时间戳
-			metric.ClientHandleHistogram.Observe(beg.Sub(time.Unix(msg.StoreTimestamp, 0)).Seconds(), metric.TypeRocketMQ, topic, "broken-delay", host)
 		}
 		return err
 	}
@@ -215,16 +210,12 @@ func producerDefaultInterceptor(producer *Producer) primitive.Interceptor {
 				xlog.String("result", realReply.String()),
 				xlog.Any("err", err),
 			)
-			metric.ClientHandleCounter.Inc(metric.TypeRocketMQ, topic, "produce", "unknown", err.Error())
-			metric.ClientHandleHistogram.Observe(time.Since(beg).Seconds(), metric.TypeRocketMQ, topic, "produce", "unknown")
 		} else {
 			xlog.Jupiter().Debug("produce",
 				xlog.String("topic", topic),
 				xlog.Any("queue", realReply.MessageQueue),
 				xlog.String("result", produceResultStr(realReply.Status)),
 			)
-			metric.ClientHandleCounter.Inc(metric.TypeRocketMQ, topic, "produce", realReply.MessageQueue.BrokerName, produceResultStr(realReply.Status))
-			metric.ClientHandleHistogram.Observe(time.Since(beg).Seconds(), metric.TypeRocketMQ, topic, "produce", realReply.MessageQueue.BrokerName)
 		}
 
 		if producer.RwTimeout > time.Duration(0) {

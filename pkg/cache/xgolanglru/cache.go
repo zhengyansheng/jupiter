@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/hashicorp/golang-lru/v2/expirable"
 	"github.com/samber/lo"
-	prome "github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 	"reflect"
@@ -31,14 +30,6 @@ func (l *localStorage[K, V]) GetCacheMapOrigin(key string, ids []K) (v map[K]V, 
 			}
 		} else {
 			idsNone = append(idsNone, id)
-		}
-		// metric report
-		if !l.config.DisableMetric {
-			if ok {
-				prome.CacheHandleCounter.WithLabelValues(prome.TypeLocalCache, l.config.Name, "HitCount", "").Inc()
-			} else {
-				prome.CacheHandleCounter.WithLabelValues(prome.TypeLocalCache, l.config.Name, "MissCount", "").Inc()
-			}
 		}
 	}
 	return
@@ -74,10 +65,6 @@ func (l *localStorage[K, V]) SetCacheMapOrigin(key string, idsNone []K, fn func(
 
 		cacheKey := l.getKey(key, id)
 		l.Cache.Add(cacheKey, cacheData)
-		// metric report
-		if !l.config.DisableMetric {
-			prome.CacheHandleCounter.WithLabelValues(prome.TypeLocalCache, l.config.Name, "SetSuccess", "").Inc()
-		}
 	}
 	return
 }

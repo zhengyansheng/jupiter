@@ -24,7 +24,6 @@ import (
 	"github.com/zhengyansheng/jupiter/pkg/conf"
 	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
-	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.etcd.io/etcd/client/v3/concurrency"
 	"go.uber.org/zap"
@@ -191,7 +190,6 @@ func (wj wrappedJob) Run() {
 }
 
 func (wj wrappedJob) run() (err error) {
-	metric.JobHandleCounter.Inc("cron", wj.Name(), "begin")
 	var fields = []xlog.Field{zap.String("name", wj.Name())}
 	var beg = time.Now()
 	defer func() {
@@ -213,7 +211,6 @@ func (wj wrappedJob) run() (err error) {
 		} else {
 			wj.logger.Info("run", fields...)
 		}
-		metric.JobHandleHistogram.Observe(time.Since(beg).Seconds(), "cron", wj.Name())
 	}()
 
 	return wj.NamedJob.Run()

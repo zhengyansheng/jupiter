@@ -26,7 +26,6 @@ import (
 	"github.com/fatih/color"
 	"github.com/zhengyansheng/jupiter/pkg"
 	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
-	"github.com/zhengyansheng/jupiter/pkg/core/metric"
 	"github.com/zhengyansheng/jupiter/pkg/core/sentinel"
 	"github.com/zhengyansheng/jupiter/pkg/util/xstring"
 	"github.com/zhengyansheng/jupiter/pkg/xlog"
@@ -45,33 +44,9 @@ func metricUnaryClientInterceptor(name string) func(ctx context.Context, method 
 		beg := time.Now()
 		err := invoker(ctx, method, req, reply, cc, opts...)
 
-		// 收敛err错误，将err过滤后，可以知道err是否为系统错误码
-		spbStatus := ecode.ExtractCodes(err)
-		// 只记录系统级别错误
-		if spbStatus.Code < ecode.EcodeNum {
-			// 只记录系统级别的详细错误码
-			metric.ClientHandleCounter.Inc(metric.TypeGRPCUnary, name, method, cc.Target(), spbStatus.GetMessage())
-			metric.ClientHandleHistogram.Observe(time.Since(beg).Seconds(), metric.TypeGRPCUnary, name, method, cc.Target())
-		} else {
-			metric.ClientHandleCounter.Inc(metric.TypeGRPCUnary, name, method, cc.Target(), "biz error")
-			metric.ClientHandleHistogram.Observe(time.Since(beg).Seconds(), metric.TypeGRPCUnary, name, method, cc.Target())
-		}
 		return err
 	}
 }
-
-// func metricStreamClientInterceptor(name string) func(ctx context.Context, desc *grpc.StreamDesc, cc *grpc.ClientConn, method string, streamer grpc.Streamer, opts ...grpc.CallOption) (grpc.ClientStream, error) {
-// 	return func(ctx context.Context, desc *grpc.StreamDesc, cc *grpc.ClientConn, method string, streamer grpc.Streamer, opts ...grpc.CallOption) (grpc.ClientStream, error) {
-// 		beg := time.Now()
-// 		clientStream, err := streamer(ctx, desc, cc, method, opts...)
-
-// 		// 暂时用默认的grpc的默认err收敛
-// 		codes := ecode.ExtractCodes(err)
-// 		metric.ClientHandleCounter.Inc(metric.TypeGRPCStream, name, method, cc.Target(), codes.GetMessage())
-// 		metric.ClientHandleHistogram.Observe(time.Since(beg).Seconds(), metric.TypeGRPCStream, name, method, cc.Target())
-// 		return clientStream, err
-// 	}
-// }
 
 func sentinelUnaryClientInterceptor(name string) grpc.UnaryClientInterceptor {
 	return func(ctx context.Context, method string, req, reply interface{},
