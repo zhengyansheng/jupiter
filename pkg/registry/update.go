@@ -15,7 +15,7 @@
 package registry
 
 import (
-	"github.com/douyu/jupiter/pkg/server"
+	"github.com/zhengyansheng/jupiter/pkg/server"
 )
 
 type Operation uint8

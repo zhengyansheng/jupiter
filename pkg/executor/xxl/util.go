@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/douyu/jupiter/pkg/executor"
-	"github.com/douyu/jupiter/pkg/executor/xxl/logger"
+	"github.com/zhengyansheng/jupiter/pkg/executor"
+	"github.com/zhengyansheng/jupiter/pkg/executor/xxl/logger"
 )
 
 // int64 to str

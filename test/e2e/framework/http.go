@@ -21,10 +21,10 @@ import (
 	"net/http"
 	"time"
 
-	jresty "github.com/douyu/jupiter/pkg/client/resty"
 	"github.com/imdario/mergo"
 	"github.com/onsi/ginkgo/v2"
 	"github.com/stretchr/testify/assert"
+	jresty "github.com/zhengyansheng/jupiter/pkg/client/resty"
 )
 
 type HTTPTestCase struct {

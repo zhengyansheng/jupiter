@@ -15,9 +15,9 @@
 package client
 
 import (
-	"github.com/douyu/jupiter/pkg/client/redis"
-	tests "github.com/douyu/jupiter/test/e2e/framework"
 	"github.com/onsi/ginkgo/v2"
+	"github.com/zhengyansheng/jupiter/pkg/client/redis"
+	tests "github.com/zhengyansheng/jupiter/test/e2e/framework"
 )
 
 var _ = ginkgo.Describe("[redis] e2e test", func() {

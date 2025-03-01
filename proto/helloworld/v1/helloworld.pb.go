@@ -7,7 +7,7 @@
 package helloworldv1
 
 import (
-	_ "github.com/douyu/jupiter/proto/fieldmask/v1"
+	_ "github.com/zhengyansheng/jupiter/proto/fieldmask/v1"
 	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
 	_ "github.com/srikrsna/protoc-gen-gotag/tagger"
 	_ "google.golang.org/genproto/googleapis/api/annotations"

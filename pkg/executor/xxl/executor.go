@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/executor"
-	"github.com/douyu/jupiter/pkg/executor/xxl/logger"
-	"github.com/douyu/jupiter/pkg/util/xdebug"
+	"github.com/zhengyansheng/jupiter/pkg/executor"
+	"github.com/zhengyansheng/jupiter/pkg/executor/xxl/logger"
+	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
 )
 
 var MaxQueueSize = 1

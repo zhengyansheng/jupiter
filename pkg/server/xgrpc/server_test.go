@@ -20,11 +20,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/xlog"
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
 	"github.com/smartystreets/goconvey/convey"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/status"
 )

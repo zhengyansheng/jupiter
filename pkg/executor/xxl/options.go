@@ -5,10 +5,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/executor/xxl/constants"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/go-basic/ipv4"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/executor/xxl/constants"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 type Options struct {

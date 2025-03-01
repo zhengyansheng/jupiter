@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/executor"
+	"github.com/zhengyansheng/jupiter/pkg/executor"
 )
 
 // 测试XJob
@@ -26,7 +26,7 @@ var callback = func(ctx context.Context, status int, msg string) error {
 	return nil
 }
 
-//TODO: Implement more test
+// TODO: Implement more test
 func Test_Run2(t *testing.T) {
 	job := &TestXJob2{}
 	ctx, cancel := context.WithCancel(context.Background())

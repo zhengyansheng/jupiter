@@ -9,11 +9,11 @@ import (
 	"testing"
 
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/executor"
-	"github.com/douyu/jupiter/pkg/executor/xxl/constants"
 	"github.com/go-basic/ipv4"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/executor"
+	"github.com/zhengyansheng/jupiter/pkg/executor/xxl/constants"
 )
 
 func Test_StdNewExecutor(t *testing.T) {

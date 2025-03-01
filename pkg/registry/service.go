@@ -14,7 +14,7 @@
 
 package registry
 
-import "github.com/douyu/jupiter/pkg/server"
+import "github.com/zhengyansheng/jupiter/pkg/server"
 
 type service struct {
 	server.Server

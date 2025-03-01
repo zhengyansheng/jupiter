@@ -18,7 +18,7 @@ import (
 	"context"
 	"io"
 
-	"github.com/douyu/jupiter/pkg/server"
+	"github.com/zhengyansheng/jupiter/pkg/server"
 )
 
 // Event ...

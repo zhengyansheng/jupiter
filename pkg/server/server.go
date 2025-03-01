@@ -18,8 +18,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg"
-	"github.com/douyu/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 )
 
 type Option func(c *ServiceInfo)

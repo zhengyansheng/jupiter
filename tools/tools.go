@@ -5,11 +5,6 @@ package tools
 
 import (
 	_ "github.com/bufbuild/buf/cmd/buf"
-	_ "github.com/douyu/jupiter/cmd/jupiter"
-	_ "github.com/douyu/jupiter/cmd/protoc-gen-go-echo"
-	_ "github.com/douyu/jupiter/cmd/protoc-gen-go-gin"
-	_ "github.com/douyu/jupiter/cmd/protoc-gen-go-xerror"
-	_ "github.com/douyu/jupiter/cmd/protoc-gen-go-xfieldmask"
 	_ "github.com/envoyproxy/protoc-gen-validate"
 	_ "github.com/go-swagger/go-swagger/cmd/swagger"
 	_ "github.com/google/wire/cmd/wire"
@@ -18,6 +13,11 @@ import (
 	_ "github.com/onsi/ginkgo/v2/ginkgo"
 	_ "github.com/srikrsna/protoc-gen-gotag"
 	_ "github.com/vektra/mockery/v2"
+	_ "github.com/zhengyansheng/jupiter/cmd/jupiter"
+	_ "github.com/zhengyansheng/jupiter/cmd/protoc-gen-go-echo"
+	_ "github.com/zhengyansheng/jupiter/cmd/protoc-gen-go-gin"
+	_ "github.com/zhengyansheng/jupiter/cmd/protoc-gen-go-xerror"
+	_ "github.com/zhengyansheng/jupiter/cmd/protoc-gen-go-xfieldmask"
 	_ "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
 	_ "google.golang.org/protobuf/cmd/protoc-gen-go"
 	_ "gorm.io/gen/tools/gentool"

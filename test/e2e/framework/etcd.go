@@ -15,11 +15,11 @@
 package framework
 
 import (
-	"github.com/douyu/jupiter/pkg/registry"
-	"github.com/douyu/jupiter/pkg/registry/etcdv3"
 	"github.com/imdario/mergo"
 	"github.com/onsi/ginkgo/v2"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/registry"
+	"github.com/zhengyansheng/jupiter/pkg/registry/etcdv3"
 )
 
 type ETCDTestCase struct {

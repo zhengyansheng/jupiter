@@ -8,13 +8,13 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/core/encoding"
-	"github.com/douyu/jupiter/pkg/server/xecho"
-	"github.com/douyu/jupiter/pkg/util/xerror"
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
 	"github.com/gin-gonic/gin"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/labstack/echo/v4"
+	"github.com/zhengyansheng/jupiter/pkg/core/encoding"
+	"github.com/zhengyansheng/jupiter/pkg/server/xecho"
+	"github.com/zhengyansheng/jupiter/pkg/util/xerror"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/proto"
 )

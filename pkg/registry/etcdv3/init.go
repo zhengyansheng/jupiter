@@ -15,7 +15,7 @@
 package etcdv3
 
 import (
-	"github.com/douyu/jupiter/pkg/registry"
+	"github.com/zhengyansheng/jupiter/pkg/registry"
 )
 
 func init() {

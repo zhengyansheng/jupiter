@@ -7,9 +7,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/core/encoding"
 	v4 "github.com/labstack/echo/v4"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/core/encoding"
 )
 
 func TestGreeterService_SayHello_0(t *testing.T) {

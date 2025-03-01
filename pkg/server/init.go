@@ -17,7 +17,7 @@ package server
 import (
 	"log"
 
-	"github.com/douyu/jupiter/pkg/flag"
+	"github.com/zhengyansheng/jupiter/pkg/flag"
 )
 
 func init() {

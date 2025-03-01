@@ -22,10 +22,10 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/util/xerror"
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
 	"github.com/labstack/echo/v4"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/util/xerror"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
 )
 
 func hander(ctx context.Context, req *helloworldv1.SayHelloRequest) (*helloworldv1.SayHelloResponse, error) {

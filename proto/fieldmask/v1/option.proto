@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-option go_package = "github.com/douyu/jupiter/proto/fieldmask/v1;fieldmaskv1";
+option go_package = "github.com/zhengyansheng/jupiter/proto/fieldmask/v1;fieldmaskv1";
 option java_multiple_files = true;
 option java_outer_classname = "FieldMaskProtoV1";
-option java_package = "com.douyu.fieldmask.v1";
+option java_package = "com.zhengyansheng.fieldmask.v1";
 
 package fieldmask.v1;
 

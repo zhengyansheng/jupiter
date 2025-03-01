@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/douyu/jupiter/pkg/util/xdebug"
-	"github.com/douyu/jupiter/pkg/util/xgo"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg/util/xdebug"
+	"github.com/zhengyansheng/jupiter/pkg/util/xgo"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 // 全局执行器存储

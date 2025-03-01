@@ -17,12 +17,12 @@ package server
 import (
 	"time"
 
-	"github.com/douyu/jupiter/pkg/client/grpc"
-	"github.com/douyu/jupiter/pkg/server/xgrpc"
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
-	"github.com/douyu/jupiter/test/e2e/framework"
 	"github.com/onsi/ginkgo/v2"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/client/grpc"
+	"github.com/zhengyansheng/jupiter/pkg/server/xgrpc"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
+	"github.com/zhengyansheng/jupiter/test/e2e/framework"
 	"google.golang.org/grpc/metadata"
 )
 

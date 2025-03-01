@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.douyu.helloworld.v1";
+option java_package = "com.zhengyansheng.helloworld.v1";
 option java_outer_classname = "HelloWorldProtoV1";
-option go_package = "github.com/douyu/jupiter/proto/helloworld/v1;helloworldv1";
+option go_package = "github.com/zhengyansheng/jupiter/proto/helloworld/v1;helloworldv1";
 
 package helloworld.v1;
 
@@ -18,8 +18,8 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
     title: "helloworld demo api definition"
     version: "1.0"
     contact: {
-      name: "douyu"
-      url: "https://github.com/douyu/jupiter"
+      name: "zhengyansheng"
+      url: "https://github.com/zhengyansheng/jupiter"
     };
   };
   tags: [
@@ -28,7 +28,7 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
       description: "This is how we do it."
       external_docs: {
         description: "Find out more"
-        url: "https://github.com/douyu/jupiter"
+        url: "https://github.com/zhengyansheng/jupiter"
       }
     }
   ];

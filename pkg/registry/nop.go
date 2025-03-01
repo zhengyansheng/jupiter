@@ -17,8 +17,8 @@ package registry
 import (
 	"context"
 
-	"github.com/douyu/jupiter/pkg/server"
-	"github.com/douyu/jupiter/pkg/xlog"
+	"github.com/zhengyansheng/jupiter/pkg/server"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 // Nop registry, used for local development/debugging

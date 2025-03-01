@@ -18,9 +18,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/util/xstring"
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/robfig/cron/v3"
+	"github.com/zhengyansheng/jupiter/pkg/util/xstring"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 var (

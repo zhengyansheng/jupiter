@@ -22,10 +22,10 @@ import (
 	"io/ioutil"
 	"net"
 
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/server"
-	"github.com/douyu/jupiter/pkg/util/xnet"
 	"github.com/pkg/errors"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/server"
+	"github.com/zhengyansheng/jupiter/pkg/util/xnet"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/reflection"

@@ -7,9 +7,9 @@ import (
 	"testing"
 
 	"github.com/BurntSushi/toml"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/executor/xxl/constants"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/executor/xxl/constants"
 )
 
 func Test_DefaultOptions(t *testing.T) {

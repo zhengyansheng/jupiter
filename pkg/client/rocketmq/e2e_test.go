@@ -25,11 +25,11 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/apache/rocketmq-client-go/v2/primitive"
 	"github.com/apache/rocketmq-client-go/v2/rlog"
-	"github.com/douyu/jupiter/pkg/client/rocketmq"
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/conf/datasource/file"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
+	"github.com/zhengyansheng/jupiter/pkg/client/rocketmq"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/conf/datasource/file"
 )
 
 func TestE2ESuites(t *testing.T) {

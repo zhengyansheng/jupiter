@@ -18,12 +18,12 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/client/resty"
-	"github.com/douyu/jupiter/pkg/server/xfasthttp"
-	"github.com/douyu/jupiter/test/e2e/framework"
 	"github.com/onsi/ginkgo/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/valyala/fasthttp"
+	"github.com/zhengyansheng/jupiter/pkg/client/resty"
+	"github.com/zhengyansheng/jupiter/pkg/server/xfasthttp"
+	"github.com/zhengyansheng/jupiter/test/e2e/framework"
 )
 
 var _ = ginkgo.Describe("[xfasthttp] e2e test", func() {

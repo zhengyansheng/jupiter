@@ -7,7 +7,7 @@
 package helloworldv1
 
 import (
-	_ "github.com/douyu/jupiter/proto/error/v1"
+	_ "github.com/zhengyansheng/jupiter/proto/error/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

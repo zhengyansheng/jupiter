@@ -1,4 +1,4 @@
-// Copyright 2020 Douyu
+// Copyright 2020
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,12 +17,11 @@ package xgoframe
 import (
 	"fmt"
 
-	"github.com/douyu/jupiter/pkg/conf"
-	"github.com/douyu/jupiter/pkg/core/constant"
-	"github.com/douyu/jupiter/pkg/core/ecode"
-	"github.com/douyu/jupiter/pkg/flag"
-	"github.com/douyu/jupiter/pkg/xlog"
-	"github.com/pkg/errors"
+	"github.com/zhengyansheng/jupiter/pkg/conf"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
+	"github.com/zhengyansheng/jupiter/pkg/core/ecode"
+	"github.com/zhengyansheng/jupiter/pkg/flag"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 // ModName mod name
@@ -62,8 +61,11 @@ func StdConfig(name string) *Config {
 // RawConfig ...
 func RawConfig(key string) *Config {
 	var config = DefaultConfig()
-	if err := conf.UnmarshalKey(key, &config); err != nil &&
-		errors.Cause(err) != conf.ErrInvalidKey {
+	//if err := conf.UnmarshalKey(key, &config); err != nil &&
+	//	errors.Cause(err) != conf.ErrInvalidKey {
+	//	config.logger.Panic("http server parse config panic", xlog.FieldErrKind(ecode.ErrKindUnmarshalConfigErr), xlog.FieldErr(err), xlog.FieldKey(key), xlog.FieldValueAny(config))
+	//}
+	if err := conf.UnmarshalKey(key, &config); err != nil {
 		config.logger.Panic("http server parse config panic", xlog.FieldErrKind(ecode.ErrKindUnmarshalConfigErr), xlog.FieldErr(err), xlog.FieldKey(key), xlog.FieldValueAny(config))
 	}
 	return config

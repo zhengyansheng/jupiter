@@ -18,10 +18,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/douyu/jupiter/pkg/client/grpc"
 	"github.com/imdario/mergo"
 	"github.com/onsi/ginkgo/v2"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/client/grpc"
 	ggrpc "google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/protobuf/proto"

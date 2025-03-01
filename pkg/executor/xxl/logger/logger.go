@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/executor/xxl/constants"
+	"github.com/zhengyansheng/jupiter/pkg/executor/xxl/constants"
 )
 
 type LogIDKey string

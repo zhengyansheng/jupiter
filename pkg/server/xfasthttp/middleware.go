@@ -20,8 +20,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/valyala/fasthttp"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 	"go.uber.org/zap"
 )
 

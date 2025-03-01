@@ -17,7 +17,7 @@ package xecho
 import (
 	"net/http"
 
-	"github.com/douyu/jupiter/pkg/util/xerror"
+	"github.com/zhengyansheng/jupiter/pkg/util/xerror"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

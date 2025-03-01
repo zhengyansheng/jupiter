@@ -18,14 +18,14 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/client/resty"
-	"github.com/douyu/jupiter/pkg/server/xecho"
-	helloworldv1 "github.com/douyu/jupiter/proto/helloworld/v1"
-	"github.com/douyu/jupiter/test/e2e/framework"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/labstack/echo/v4"
 	"github.com/onsi/ginkgo/v2"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/client/resty"
+	"github.com/zhengyansheng/jupiter/pkg/server/xecho"
+	helloworldv1 "github.com/zhengyansheng/jupiter/proto/helloworld/v1"
+	"github.com/zhengyansheng/jupiter/test/e2e/framework"
 )
 
 var _ = ginkgo.Describe("[xgrpcgateway] e2e test", func() {

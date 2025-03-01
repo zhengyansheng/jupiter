@@ -18,10 +18,10 @@ import (
 	"context"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/client/redis"
 	"github.com/imdario/mergo"
 	"github.com/onsi/ginkgo/v2"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/client/redis"
 )
 
 type RedisTestCase struct {

@@ -18,8 +18,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/xlog"
 	"github.com/robfig/cron/v3"
+	"github.com/zhengyansheng/jupiter/pkg/xlog"
 )
 
 // delayIfStillRunning serializes jobs, delaying subsequent runs until the

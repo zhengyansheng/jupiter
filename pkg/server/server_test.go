@@ -17,8 +17,8 @@ package server
 import (
 	"testing"
 
-	"github.com/douyu/jupiter/pkg/core/constant"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/core/constant"
 	"google.golang.org/grpc/attributes"
 	"google.golang.org/grpc/resolver"
 )

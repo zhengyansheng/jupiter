@@ -18,12 +18,12 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/douyu/jupiter/pkg/client/resty"
-	"github.com/douyu/jupiter/pkg/server/xgin"
-	"github.com/douyu/jupiter/test/e2e/framework"
 	"github.com/gin-gonic/gin"
 	"github.com/onsi/ginkgo/v2"
 	"github.com/stretchr/testify/assert"
+	"github.com/zhengyansheng/jupiter/pkg/client/resty"
+	"github.com/zhengyansheng/jupiter/pkg/server/xgin"
+	"github.com/zhengyansheng/jupiter/test/e2e/framework"
 )
 
 var _ = ginkgo.Describe("[xgin] e2e test", func() {
